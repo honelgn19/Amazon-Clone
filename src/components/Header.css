@@ -1,0 +1,14 @@
+
+.header-sction{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width:100%;
+}
+.logo-container {
+  /* width: 80%; */
+  /* height: 50px; */
+}
+.search-btn{
+  background-color: #d69642;
+}

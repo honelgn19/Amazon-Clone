@@ -1,11 +1,14 @@
 import React from "react";
 import Header from "./components/Header";
-import LowerHeader from "./components/LowerHeader"; 
+import LowerHeader from "./components/LowerHeader";
 function App() {
-  return <>
+  return (
+    <>
       <Header />
-      {/* <LowerHeader /> */}
-    </>;
+      <LowerHeader />
+      
+    </>
+  );
 }
 
 export default App;
