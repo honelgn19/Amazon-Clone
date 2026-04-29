@@ -1,22 +1,41 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const LowerHeader = () => {
   return (
-    <div className="text-white flex items-center px-4 py-2 space-x-4 text-sm">
+    <div className="bg-[#232f3e] text-white flex items-center gap-6 px-4 py-2 text-sm whitespace-nowrap">
       
-      {/* Menu */}
-      <div className="flex items-center space-x-1 cursor-pointer">
+      {/* All Menu */}
+      <div className="flex items-center gap-2 font-bold cursor-pointer hover:border hover:border-white px-2 py-1">
         <FaBars />
-        <span className="font-bold">All</span>
+        <span>All</span>
       </div>
 
       {/* Links */}
-      <p className="cursor-pointer">Today's Deals</p>
-      <p className="cursor-pointer">Customer Service</p>
-      <p className="cursor-pointer">Registry</p>
-      <p className="cursor-pointer">Gift Cards</p>
-      <p className="cursor-pointer">Sell</p>
+      <Link to="/deals" className="hover:border hover:border-white px-2 py-1">
+        Today's Deals
+      </Link>
+
+      <Link to="/gift-cards" className="hover:border hover:border-white px-2 py-1">
+        Gift Cards
+      </Link>
+
+      <Link to="/sell" className="hover:border hover:border-white px-2 py-1">
+        Sell
+      </Link>
+
+      <Link to="/registry" className="hover:border hover:border-white px-2 py-1">
+        Registry
+      </Link>
+
+      <Link to="/prime" className="hover:border hover:border-white px-2 py-1">
+        Prime Video
+      </Link>
+
+      <Link to="/customer-service" className="hover:border hover:border-white px-2 py-1">
+        Customer Service
+      </Link>
 
     </div>
   );

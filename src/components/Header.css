@@ -1,13 +1,16 @@
 
-.header-sction{
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    max-width:100%;
+.header-section{
+    width: 100%;           /* or remove width entirely */
+  max-width: none;       /* if it has a max-width */
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;       /* or keep small padding if you want inner spacing */
+  padding-right: 0;
+  background-color: #1a1a1a; /* your dark color */
+  box-sizing: border-box;
 }
 .logo-container {
-  /* width: 80%; */
-  /* height: 50px; */
+  /* max-width: 100% */
 }
 .search-btn{
   background-color: #d69642;

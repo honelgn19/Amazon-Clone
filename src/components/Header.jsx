@@ -176,9 +176,13 @@ const Header = () => {
         </div>
 
         {/* Cart */}
-        <div className="flex items-center cursor-pointer px-2 hover:border hover:border-white">
-          <BiCartAdd className="text-2xl" />
-          <span className="ml-1 font-bold">0</span>
+        <div className="relative flex items-center cursor-pointer px-2 hover:border hover:border-white">
+          <BiCartAdd className="text-5xl" />
+
+          {/* Badge */}
+          <span className="absolute text-yellow-400 bg-black text-md font-bold px-1 ml-5 mb-3 rounded">
+            0
+          </span>
         </div>
       </div>
     </div>
