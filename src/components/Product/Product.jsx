@@ -1,33 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
-import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Product() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate an API call to fetch products
     const fetchProducts = async () => {
-      // Replace this with your actual API call
       try {
-        const response = await axios.axios.get('https://fakestoreapi.com/products');
+        const response = await axios.get("https://fakestoreapi.com/products");
         setProducts(response.data);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchProducts();
   }, []);
 
+  if (loading) {
+    return <p className="p-4">Loading products...</p>;
+  }
+
   return (
-    <div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
       {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          {...product}
-        />
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
