@@ -7,16 +7,20 @@ import "./Header.css";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BiCartAdd } from "react-icons/bi";
 import { Link } from "react-router-dom";
-
+import { useCart } from "./Product/CartContext";
 const Header = () => {
+  const { cart } = useCart();
   return (
-    <div className="w-full bg-black text-white">
+    <div className="w-full fixed-top bg-black text-white">
       <div className="flex items-center px-4  gap-4 whitespace-nowrap">
         {/* Logo */}
 
-        <a href="/" className="hover:border hover:border-white  cursor-pointer">
+        <Link
+          to="/"
+          className="hover:border hover:border-white  cursor-pointer"
+        >
           <img src={logo} alt="Amazon Logo" className="w-[100px] h-[60px]" />
-        </a>
+        </Link>
 
         {/* Location */}
         <div className="flex items-center text-sm cursor-pointer px-2 hover:border hover:border-white">
@@ -132,18 +136,18 @@ const Header = () => {
               <div className="p-4 text-sm cursor-pointer">
                 <p className="font-bold mb-2">Your Lists</p>
 
-                <a
-                  href="#"
+                <Link
+                  to="/lists"
                   className="block hover:underline hover:text-orange-700 "
                 >
                   Create a List
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/lists"
                   className="block hover:underline hover:text-orange-700 "
                 >
                   Find a List
-                </a>
+                </Link>
 
                 <hr className="my-2" />
 
@@ -155,18 +159,18 @@ const Header = () => {
                 >
                   Orders
                 </a>
-                <a
-                  href="#"
+                <Link
+                  to="/orders"
                   className="block hover:underline hover:text-orange-700 "
                 >
                   Recommendations
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/orders"
                   className="block hover:underline hover:text-orange-700 "
                 >
                   Browsing History
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -183,12 +187,14 @@ const Header = () => {
 
           {/* Cart */}
           <div className="relative flex items-center cursor-pointer px-2 hover:border hover:border-white">
-            <BiCartAdd className="text-5xl" />
-
-            {/* Badge */}
-            <span className="absolute text-yellow-400 bg-black text-md font-bold px-1 ml-5 mb-3 rounded">
-              0
-            </span>
+            <Link to="/cart">
+              <BiCartAdd className="text-5xl" />
+</Link>
+              {/* Badge */}
+              <span className="absolute text-yellow-400 bg-black text-md font-bold px-1 ml-5 mb-3 rounded">
+                 {cart.length}
+              </span>
+            
           </div>
         </div>
       </div>
